@@ -17,15 +17,16 @@ CREATE TABLE properties (
   street VARCHAR NOT NULL,
   city VARCHAR NOT NULL,
   province VARCHAR NOT NULL,
+  country VARCHAR NOT NULL,
   post_code VARCHAR NOT NULL,
   description TEXT,
-  costpetnight INTEGER NOT NULL DEFAULT 0,
+  costpernight INTEGER NOT NULL DEFAULT 0,
   parking_spaces INTEGER NOT NULL DEFAULT 0,
   numberofbathrooms INTEGER NOT NULL DEFAULT 0,
   numberofbedrooms INTEGER NOT NULL DEFAULT 0,
   status BOOLEAN NOT NULL DEFAULT TRUE,
-  thumbnail VARCHAR NOT NULL,
-  cover VARCHAR NOT NULL
+  thumbnail_url VARCHAR NOT NULL,
+  cover_url VARCHAR NOT NULL
 );
 
 CREATE TABLE reservations (
