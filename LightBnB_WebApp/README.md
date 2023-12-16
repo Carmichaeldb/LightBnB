@@ -1,4 +1,6 @@
-# LightBnB
+# LightBnB WebApp
+
+LightBnB WebApp is the front end portion of this project provided by Lighthouse Labs. This web app is a AirBnB clone to fetch and display property, reservation, and user data from a database using SQL queries created by myself in the db folder. Feel free to review my work in the index.js and database.js files in the db folder.
 
 ## Project Structure
 
@@ -6,6 +8,7 @@
 .
 ├── db
 │   ├── json
+|   ├── index.js
 │   └── database.js
 ├── public
 │   ├── javascript
@@ -53,3 +56,27 @@
 * `routes` contains the router files which are responsible for any HTTP requests to `/users/something` or `/api/something`. 
 * `styles` contains all of the sass files. 
 * `server.js` is the entry point to the application. This connects the routes to the database.
+
+## Set Up
+
+To set up and run this web app locally please follow these steps:
+
+1. Open Terminal and navigate to the LightBnB_WebApp directory
+
+2. Run npm install
+```
+npm install
+```
+
+## Start Server
+
+To start the server locally after [competing the set up](#set-up) please follow these steps:
+
+1. In Terminal navigate to LightBnB_WebApp directory
+
+2. Run npm run local
+```
+npm run local
+```
+
+3. In your browser navigate to [localhost:3000](http://localhost:3000/)
