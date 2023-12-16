@@ -69,9 +69,9 @@ CREATE DATABASE lightBnB;
 ```
 4. Create Tables and Seed Data
 ```
-\i migrations/01_schema.sql
-\i seeds/01_seeds.sql
-\i seeds/02_seeds.sql
+\i migrations/01_schema.sql;
+\i seeds/01_seeds.sql;
+\i seeds/02_seeds.sql;
 ```
 5. Set Up Web App: CD into LightBnB_WebApp and run npm install *note: exit postgres with \q or use a new terminal tab in the root lightBnB folder*
 ```
