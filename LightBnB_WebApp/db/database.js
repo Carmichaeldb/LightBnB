@@ -11,6 +11,7 @@ const getUserWithEmail = function (email) {
   const queryString = `SELECT * FROM users
   WHERE email = $1`;
   const queryParams = [email];
+
   return query(queryString, queryParams)
     .then((result) => {
       // if no user exists then null
@@ -33,6 +34,7 @@ const getUserWithId = function (id) {
   const queryString = `SELECT * FROM users
   WHERE id = $1`;
   const queryParams = [id];
+
   return query(queryString, queryParams)
     .then((result) => {
       // if no user exists return null
@@ -52,10 +54,11 @@ const getUserWithId = function (id) {
  * @return {Promise<{}>} A promise to the user.
  */
 const addUser = function (user) {
-  return pool
-    .query(
-      `INSERT INTO users(name, email, password) VALUES($1, $2, $3) 
-      RETURNING *`, [user.name, user.email, user.password])
+  const queryString = `INSERT INTO users(name, email, password) VALUES($1, $2, $3) 
+  RETURNING *`;
+  const queryParams = [user.name, user.email, user.password];
+  
+  return query(queryString, queryParams)
     .then((result) => {
       return result.rows[0];
     })
@@ -156,6 +159,7 @@ const addProperty = function (property) {
   const queryParams = [property.owner_id, property.title, property.street, property.city, property.province, property.country,
     property.post_code, property.description, property.cost_per_night, property.parking_spaces, property.number_of_bathrooms,
     property.number_of_bedrooms, property.thumbnail_photo_url, property.cover_photo_url];
+
   return query(queryString, queryParams)
     .then((result) => {
       return result.rows[0];
